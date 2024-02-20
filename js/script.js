@@ -21,6 +21,7 @@ window.onload = function () {
     });
 
     playButton.addEventListener("click", function () {
+      //myGame.player.updateBroom();
       startGame();
     });
   

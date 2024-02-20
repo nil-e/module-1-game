@@ -74,8 +74,10 @@ class Player extends Component {
         newValue=brooms[i+1];
       }
       charBroom.setAttribute("src",newValue);
+      console.log(newValue);
+      let gameBroom = document.getElementById(currentBroom);
+      gameBroom.setAttribute("src",newValue);
+      gameBroom.setAttribute("id",newValue);
     }
-
-    
   }
   
