@@ -4,7 +4,6 @@ window.onload = function () {
     const playButton = document.getElementById("play-button");
     const broomSwitch = document.getElementById("broom");
     const goBackLink = document.getElementById("go-back");
-   // let myGame;
    const myGame = new Game();
 
     startButton.addEventListener("click", function () {
@@ -21,7 +20,15 @@ window.onload = function () {
     });
 
     playButton.addEventListener("click", function () {
-      //myGame.player.updateBroom();
+      let nickname = document.getElementById("username").value;
+      //let house = document.getElementsByClassName("house");
+      //let houseValue;
+      // house.forEach(element => {
+      //   if(element.checked){ houseValue = element.value;}
+      // });
+      
+      //let houseValue = house.getAttribute("house").value;
+      //console.log(typeof house,house);
       startGame();
     });
   
@@ -72,7 +79,5 @@ window.onload = function () {
     goBackLink.addEventListener("click", function () {
       restartGame();
     });
-
-    
 
   };
