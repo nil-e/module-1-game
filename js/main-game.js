@@ -8,7 +8,9 @@ class Game {
     this.charSetupScreen = document.getElementById("char-setup");
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreen = document.getElementById("game-end");
-    this.charBroom = document.getElementById("broom");
+    this.charBroomElement = document.getElementById("broom");
+    this.charBroom = this.charBroomElement.getAttribute("src");
+    this.gamePlay = document.getElementById("game-play");
     this.player = new Player(
       this.gameScreen,
       200,
@@ -39,6 +41,7 @@ class Game {
     this.gameScreen.style.width = `${this.width}px`;
     this.charSetupScreen.style.display = "none";
     this.gameScreen.style.display = "block";
+    this.gamePlay.style.display = "block";
     this.gameScreen.appendChild(document.getElementById("score-lives"));
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();
@@ -72,6 +75,7 @@ class Game {
         this.obstacles.splice(i, 1);
         i--;
       }
+      console.log("update initiated");
     }
 
     if (this.lives === 0) {

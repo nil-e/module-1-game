@@ -25,7 +25,7 @@ body {
     padding: 20px 0px;
     overflow: hidden;
     position: relative;
-    background-image: url(../assets/group1.svg);
+    background-image: url("../module-1-game/assets/group1.svg");
     background-size: cover;
     animation: slide 5s linear infinite;
   }

@@ -24,6 +24,7 @@ class Player extends Component {
         this.top = this.gameScreen.offsetHeight - this.height - 10;
       }
       this.updatePosition();
+      console.log("move initiated");
     }
   
     didCollide(obstacle) {

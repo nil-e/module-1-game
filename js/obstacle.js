@@ -16,7 +16,7 @@ class Obstacle extends Component {
   }
 }
 
-class Gem extends Component {
+class Gem extends Obstacle {
   constructor(gameScreen) {
     super(
       gameScreen,
@@ -34,7 +34,7 @@ class Gem extends Component {
   }
 }
 
-class Snitch extends Component {
+class Snitch extends Obstacle {
   constructor(gameScreen) {
     super(
       gameScreen,
@@ -52,20 +52,20 @@ class Snitch extends Component {
   }
 }
 
-class Potion extends Component {
-  constructor(gameScreen) {
-    super(
-      gameScreen,
-      Math.floor(Math.random() * 300 + 70),
-      0,
-      100,
-      150,
-      "./assets/potion.svg"
-    );
-  }
+// class Potion extends Component {
+//   constructor(gameScreen) {
+//     super(
+//       gameScreen,
+//       Math.floor(Math.random() * 300 + 70),
+//       0,
+//       100,
+//       150,
+//       "./assets/potion.svg"
+//     );
+//   }
 
-  move() {
-    this.top += 3;
-    this.updatePosition();
-  }
-}
+//   move() {
+//     this.top += 3;
+//     this.updatePosition();
+//   }
+// }

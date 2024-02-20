@@ -28,18 +28,6 @@ window.onload = function () {
       myGame.start();
     }
 
-    restartButton.addEventListener("click", function () {
-      restartGame();
-    });
-
-    function restartGame() {
-      location.reload();
-    }
-
-    goBackLink.addEventListener("click", function () {
-      restartGame();
-    });
-
     function handleKeydown(event) {
       const key = event.key;
       const possibleKeystrokes = [
@@ -68,4 +56,21 @@ window.onload = function () {
         }
       }
     }
+
+    window.addEventListener("keydown", handleKeydown);
+
+    restartButton.addEventListener("click", function () {
+      restartGame();
+    });
+
+    function restartGame() {
+      location.reload();
+    }
+
+    goBackLink.addEventListener("click", function () {
+      restartGame();
+    });
+
+    
+
   };
