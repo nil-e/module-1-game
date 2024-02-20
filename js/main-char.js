@@ -75,5 +75,7 @@ class Player extends Component {
       }
       charBroom.setAttribute("src",newValue);
     }
+
+    
   }
   

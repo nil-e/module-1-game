@@ -4,8 +4,9 @@ window.onload = function () {
     const playButton = document.getElementById("play-button");
     const broomSwitch = document.getElementById("broom");
     const goBackLink = document.getElementById("go-back");
-    const myGame = new Game();
-  
+   // let myGame;
+   const myGame = new Game();
+
     startButton.addEventListener("click", function () {
       setCharacter();
     });
@@ -42,16 +43,16 @@ window.onload = function () {
   
         switch (key) {
           case "ArrowLeft":
-            game.player.directionX = -1;
+            myGame.player.directionX = -1;
             break;
           case "ArrowUp":
-            game.player.directionY = -1;
+            myGame.player.directionY = -1;
             break;
           case "ArrowRight":
-            game.player.directionX = 1;
+            myGame.player.directionX = 1;
             break;
           case "ArrowDown":
-            game.player.directionY = 1;
+            myGame.player.directionY = 1;
             break;
         }
       }
