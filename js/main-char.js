@@ -75,7 +75,7 @@ class Player extends Component {
       }
       charBroom.setAttribute("src",newValue);
       console.log(newValue);
-      let gameBroom = document.querySelector();
+      let gameBroom = document.getElementById(currentBroom);
       gameBroom.setAttribute("src",newValue);
       gameBroom.setAttribute("id",newValue);
     }

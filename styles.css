@@ -16,7 +16,7 @@ body {
     display: none;
     width: 100vw;
     padding: 20px 0px;
-    justify-content: center;
+
   }
   
   #game-screen {
@@ -28,6 +28,13 @@ body {
     background-image: url("../module-1-game/assets/group1.svg");
     background-size: cover;
     animation: slide 5s linear infinite;
+  }
+
+  #houseLogo {
+    width: 100px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
   }
   
   @keyframes slide {

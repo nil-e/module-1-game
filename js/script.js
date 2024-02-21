@@ -20,15 +20,6 @@ window.onload = function () {
     });
 
     playButton.addEventListener("click", function () {
-      let nickname = document.getElementById("username").value;
-      //let house = document.getElementsByClassName("house");
-      //let houseValue;
-      // house.forEach(element => {
-      //   if(element.checked){ houseValue = element.value;}
-      // });
-      
-      //let houseValue = house.getAttribute("house").value;
-      //console.log(typeof house,house);
       startGame();
     });
   

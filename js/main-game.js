@@ -1,6 +1,6 @@
 const gameFrame = Math.round(1000 / 60);
-const gameHeight = 600;
-const gameWidth = 500;
+const gameHeight = 900;
+const gameWidth = "100vw";
 
 class Game {
   constructor() {
@@ -43,6 +43,25 @@ class Game {
     this.gameScreen.style.display = "block";
     this.gamePlay.style.display = "block";
     this.gameScreen.appendChild(document.getElementById("score-lives"));
+    let nickname = document.getElementById("username").value;
+    this.element = document.createElement("h2");
+    this.element.innerHTML = nickname;
+    this.gameScreen.appendChild(this.element);    
+
+    let houseOptions = document.querySelectorAll("input[name='house']");
+    let houseValue;
+    let findSelected = () => {
+        let selected = document.querySelector("input[name='house']:checked").value;
+        return selected;
+      };
+    houseValue = findSelected();
+    this.houseLogo = document.createElement("img");
+    this.houseText = document.createElement("h2");
+    this.houseLogo.src = `./assets/${houseValue}.svg`;
+    this.houseLogo.id = "houseLogo";
+    this.houseText.innerHTML = houseValue;
+    this.gameScreen.appendChild(this.houseText); 
+    this.gameScreen.appendChild(this.houseLogo); 
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();
     }, this.gameLoopFrecuency);
