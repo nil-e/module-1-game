@@ -29,7 +29,7 @@ class Game {
     this.gameIntervalId = null;
     this.gameLoopFrecuency = gameFrame;
   }
-  
+
   charSetup() {
     this.gameScreen.style.height = `${this.height}px`;
     this.gameScreen.style.width = `${this.width}px`;
@@ -68,6 +68,9 @@ class Game {
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();
     }, this.gameLoopFrecuency);
+    setTimeout(() => {
+      this.endGame();
+    }, 60000);
   }
 
   gameLoop() {
@@ -114,6 +117,17 @@ class Game {
     this.gameIsOver = true;
     this.gameScreen.style.display = "none";
     this.gameEndScreen.style.display = "block";
-    this.gameEndScreen.appendChild(document.getElementById("score-lives"));
+    let finalScore = Number(document.getElementById("score").innerText);
+    finalScore += Number(document.getElementById("lives").innerText)*50;
+    this.displayScore = document.createElement("h2");
+    let houseName = document.getElementById("houseText").innerText;
+    if (finalScore === 0) {
+      this.displayScore.innerHTML = `You brought shame to ${houseName}! Try harder next time!`;
+    }
+    else if (finalScore > 0) {
+      this.displayScore.innerHTML = `${finalScore} points to ${houseName}! Great job!`;
+    }
+    this.displayScore.id = "displayScore";
+    this.gameEndScreen.appendChild(this.displayScore);
   }
 }

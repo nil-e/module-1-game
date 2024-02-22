@@ -61,6 +61,15 @@ body {
     border-radius: 30%;
     padding: 10px;
   }
+
+  #displayScore {
+    /*position: absolute;*/
+    top: 30px;
+    text-align:center;
+    /* left: 40%; */
+    background-color:rgb(143, 188, 143);
+    padding: 20px;
+  }
   
   @keyframes slide {
     0% {
