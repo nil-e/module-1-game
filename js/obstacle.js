@@ -16,11 +16,11 @@ class Obstacle extends Component {
   }
 }
 
-class Gem extends Obstacle {
+class Gem extends Component {
   constructor(gameScreen) {
     super(
       gameScreen,
-      Math.floor(Math.random() * 300 + 70),
+      Math.floor(Math.random() * (window.screen.width-290) + 170),
       0,
       100,
       150,
@@ -34,11 +34,11 @@ class Gem extends Obstacle {
   }
 }
 
-class Snitch extends Obstacle {
+class Snitch extends Component {
   constructor(gameScreen) {
     super(
       gameScreen,
-      Math.floor(Math.random() * 300 + 70),
+      Math.floor(Math.random() * 250 + 70),
       0,
       100,
       150,

@@ -22,7 +22,8 @@ class Game {
     this.height = gameHeight;
     this.width = gameWidth;
     this.obstacles = [];
-    this.caughtItems = [];
+    this.Gems = [];
+    // this.Snitch = [];
     this.score = 0;
     this.lives = 3;
     this.gameIsOver = false;
@@ -69,7 +70,9 @@ class Game {
       this.gameLoop();
     }, this.gameLoopFrecuency);
     setTimeout(() => {
+      if(!this.gameIsOver) {
       this.endGame();
+    }
     }, 60000);
   }
 
@@ -86,7 +89,7 @@ class Game {
     for (let i = 0; i < this.obstacles.length; i++) {
       const obstacle = this.obstacles[i];
       obstacle.move();
-
+/*here i do obstacles*/
       if (this.player.didCollide(obstacle)) {
         obstacle.element.remove();
         this.obstacles.splice(i, 1);
@@ -102,12 +105,50 @@ class Game {
       }
       console.log("update initiated");
     }
+/*here i do gems*/
+    for (let i = 0; i < this.Gems.length; i++) {
+      const Gem = this.Gems[i];
+      Gem.move();
+
+      if (this.player.didCollide(Gem)) {
+        Gem.element.remove();
+        this.Gems.splice(i, 1);
+        this.score += 10;
+        document.getElementById("score").innerText = this.score.toString();
+        i--;
+      }
+      else if (Gem.top > this.height) {
+        Gem.element.remove();
+        this.Gems.splice(i, 1);
+        i--;
+      }
+      console.log("update initiated");
+    }
+
+/*here i do snitch*/
+// if(this.Snitch.length === 0)
+// {
+//   new Snitch(this.gameScreen)
+//   Snitch.move();
+
+//   if (this.player.didCollide(Snitch)) {
+//     Snitch.element.remove();
+//     this.score += 200;
+//     document.getElementById("score").innerText = this.score.toString();
+//   }
+//   else if (Snitch.top > this.height) {
+//     Snitch.element.remove();
+//   }
+// }
 
     if (this.lives === 0) {
       this.endGame();
     }
     if (Math.random() > 0.98 && this.obstacles.length < 1) {
       this.obstacles.push(new Obstacle(this.gameScreen));
+    }
+    if (Math.random() > 0.97 && this.Gems.length < 1) {
+      this.Gems.push(new Gem(this.gameScreen));
     }
   }
 

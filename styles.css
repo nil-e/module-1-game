@@ -15,8 +15,8 @@ body {
   #game-play {
     display: none;
     width: 100vw;
+    max-height:100vw;
     padding: 20px 0px;
-
   }
   
   #game-screen {
@@ -63,10 +63,7 @@ body {
   }
 
   #displayScore {
-    /*position: absolute;*/
-    top: 30px;
     text-align:center;
-    /* left: 40%; */
     background-color:rgb(143, 188, 143);
     padding: 20px;
   }
