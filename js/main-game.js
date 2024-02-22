@@ -89,7 +89,7 @@ class Game {
     for (let i = 0; i < this.obstacles.length; i++) {
       const obstacle = this.obstacles[i];
       obstacle.move();
-/*here i do obstacles*/
+//*here i do obstacles*/
       if (this.player.didCollide(obstacle)) {
         obstacle.element.remove();
         this.obstacles.splice(i, 1);
@@ -105,7 +105,7 @@ class Game {
       }
       console.log("update initiated");
     }
-/*here i do gems*/
+//*here i do gems*/
     for (let i = 0; i < this.Gems.length; i++) {
       const Gem = this.Gems[i];
       Gem.move();
@@ -125,7 +125,7 @@ class Game {
       console.log("update initiated");
     }
 
-/*here i do snitch*/
+//*here i do snitch*/
 // if(this.Snitch.length === 0)
 // {
 //   new Snitch(this.gameScreen)
