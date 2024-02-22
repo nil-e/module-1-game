@@ -15,8 +15,8 @@ class Game {
       this.gameScreen,
       200,
       500,
-      100,
       150,
+      200,
       this.charBroom
     );
     this.height = gameHeight;
@@ -29,6 +29,7 @@ class Game {
     this.gameIntervalId = null;
     this.gameLoopFrecuency = gameFrame;
   }
+  
   charSetup() {
     this.gameScreen.style.height = `${this.height}px`;
     this.gameScreen.style.width = `${this.width}px`;
@@ -46,6 +47,7 @@ class Game {
     let nickname = document.getElementById("username").value;
     this.element = document.createElement("h2");
     this.element.innerHTML = nickname;
+    this.element.id = "nickname";
     this.gameScreen.appendChild(this.element);    
 
     let houseOptions = document.querySelectorAll("input[name='house']");
@@ -60,6 +62,7 @@ class Game {
     this.houseLogo.src = `./assets/${houseValue}.svg`;
     this.houseLogo.id = "houseLogo";
     this.houseText.innerHTML = houseValue;
+    this.houseText.id = "houseText";
     this.gameScreen.appendChild(this.houseText); 
     this.gameScreen.appendChild(this.houseLogo); 
     this.gameIntervalId = setInterval(() => {

@@ -36,6 +36,31 @@ body {
     top: 30px;
     left: 20px;
   }
+
+  #houseText {
+    width: 100px;
+    position: absolute;
+    top: 120px;
+    left: 20px;
+  }
+
+  #nickname {
+    width: 100px;
+    position: absolute;
+    top: 160px;
+    left: 20px;
+    font-family:fantasy;
+  }
+
+  #score-lives {
+    width: 100px;
+    position: absolute;
+    top: 30px;
+    left: 90%;
+    background-color:rgb(143, 188, 143);
+    border-radius: 30%;
+    padding: 10px;
+  }
   
   @keyframes slide {
     0% {
