@@ -49,14 +49,16 @@ class Game {
     this.element = document.createElement("h2");
     this.element.innerHTML = nickname;
     this.element.id = "nickname";
-    this.gameScreen.appendChild(this.element);    
+    this.gameScreen.appendChild(this.element);
 
     let houseOptions = document.querySelectorAll("input[name='house']");
     let houseValue;
     let findSelected = () => {
-        let selected = document.querySelector("input[name='house']:checked").value;
-        return selected;
-      };
+      let selected = document.querySelector(
+        "input[name='house']:checked"
+      ).value;
+      return selected;
+    };
     houseValue = findSelected();
     this.houseLogo = document.createElement("img");
     this.houseText = document.createElement("h2");
@@ -64,15 +66,15 @@ class Game {
     this.houseLogo.id = "houseLogo";
     this.houseText.innerHTML = houseValue;
     this.houseText.id = "houseText";
-    this.gameScreen.appendChild(this.houseText); 
-    this.gameScreen.appendChild(this.houseLogo); 
+    this.gameScreen.appendChild(this.houseText);
+    this.gameScreen.appendChild(this.houseLogo);
     this.gameIntervalId = setInterval(() => {
       this.gameLoop();
     }, this.gameLoopFrecuency);
     setTimeout(() => {
-      if(!this.gameIsOver) {
-      this.endGame();
-    }
+      if (!this.gameIsOver) {
+        this.endGame();
+      }
     }, 60000);
   }
 
@@ -98,14 +100,12 @@ class Game {
         i--;
       } else if (obstacle.top > this.height) {
         obstacle.element.remove();
-        this.score++;
-        document.getElementById("score").innerText = this.score.toString();
         this.obstacles.splice(i, 1);
         i--;
       }
       console.log("update initiated");
     }
-//here i do gems
+    //here i do gems
     for (let i = 0; i < this.Gems.length; i++) {
       const Gem = this.Gems[i];
       Gem.move();
@@ -116,8 +116,7 @@ class Game {
         this.score += 10;
         document.getElementById("score").innerText = this.score.toString();
         i--;
-      }
-      else if (Gem.top > this.height) {
+      } else if (Gem.top > this.height) {
         Gem.element.remove();
         this.Gems.splice(i, 1);
         i--;
@@ -125,25 +124,24 @@ class Game {
       console.log("update initiated");
     }
 
-//here i do snitch
-// for (let i = 0; i < this.Snitches.length; i++) {
-//   const Snitch = this.Snitches[i];
-//   Snitch.move();
+    //here i do snitch
+    for (let i = 0; i < this.Snitches.length; i++) {
+      const Snitch = this.Snitches[i];
+      Snitch.move();
 
-//   if (this.player.didCollide(Snitch)) {
-//     Snitch.element.remove();
-//     this.Gems.splice(i, 1);
-//     this.score += 200;
-//     document.getElementById("score").innerText = this.score.toString();
-//     i--;
-//   }
-//   else if (Snitch.top > this.height) {
-//     Snitch.element.remove();
-//     this.Gems.splice(i, 1);
-//     i--;
-//   }
-//   console.log("update initiated");
-// }
+      if (this.player.didCollide(Snitch)) {
+        Snitch.element.remove();
+        this.Snitches.splice(i, 1);
+        this.score += 100;
+        document.getElementById("score").innerText = this.score.toString();
+        i--;
+      } else if (Snitch.top > this.height) {
+        Snitch.element.remove();
+        this.Snitches.splice(i, 1);
+        i--;
+      }
+      console.log("snitch initiated");
+    }
 
     if (this.lives === 0) {
       this.endGame();
@@ -155,9 +153,9 @@ class Game {
       this.Gems.push(new Gem(this.gameScreen));
     }
 
-    // if (Math.random() > 0.97 && this.Snitches.length < 1) {
-    //   this.Snitches.push(new Snitch(this.gameScreen));
-    // }
+    if (Math.random() > 0.95 && this.Snitches.length < 1) {
+      this.Snitches.push(new Snitch(this.gameScreen));
+    }
   }
 
   endGame() {
@@ -167,14 +165,18 @@ class Game {
     this.gameScreen.style.display = "none";
     this.gameEndScreen.style.display = "block";
     let finalScore = Number(document.getElementById("score").innerText);
-    finalScore += Number(document.getElementById("lives").innerText)*50;
+    finalScore += Number(document.getElementById("lives").innerText) * 50;
     this.displayScore = document.createElement("h2");
     let houseName = document.getElementById("houseText").innerText;
-    if (finalScore === 0) {
+    if (
+      finalScore === 0 ||
+      Number(document.getElementById("lives").innerText) === 0
+    ) {
       this.displayScore.innerHTML = `You brought shame to ${houseName}! Try harder next time!`;
-    }
-    else if (finalScore > 0) {
+      this.displayScore.style.backgroundColor = "rgb(184, 50, 60)";
+    } else if (finalScore > 0) {
       this.displayScore.innerHTML = `${finalScore} points to ${houseName}! Great job!`;
+      this.displayScore.style.backgroundColor = "rgb(143, 188, 143)";
     }
     this.displayScore.id = "displayScore";
     this.gameEndScreen.appendChild(this.displayScore);

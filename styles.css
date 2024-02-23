@@ -1,127 +1,162 @@
 body {
-    padding: 0;
-    text-align: center;
-    height: 500px;
-    background-color: #808080;
-  }
-  
-  #game-intro {
-    padding: 50px 0px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  #game-play {
-    display: none;
-    width: 100vw;
-    max-height:100vw;
-    padding: 20px 0px;
-  }
-  
-  #game-screen {
-    display: none;
-    align-content: center;
-    padding: 20px 0px;
-    overflow: hidden;
-    position: relative;
-    background-image: url("../module-1-game/assets/group1.svg");
-    background-size: cover;
-    animation: slide 5s linear infinite;
-  }
+  padding: 0;
+  text-align: center;
+  height: 500px;
+  background-color: #808080;
+}
 
-  #houseLogo {
-    width: 100px;
-    position: absolute;
-    top: 30px;
-    left: 20px;
-  }
+#game-intro {
+  padding: 50px 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
-  #houseText {
-    width: 100px;
-    position: absolute;
-    top: 120px;
-    left: 20px;
-  }
+.tutorial {
+  width: 100px;
+  height: 100px;
+}
 
-  #nickname {
-    width: 100px;
-    position: absolute;
-    top: 160px;
-    left: 20px;
-    font-family:fantasy;
-  }
+.tutorial-box {
+  width: 150px;
+}
 
-  #score-lives {
-    width: 100px;
-    position: absolute;
-    top: 30px;
-    left: 90%;
-    background-color:rgb(143, 188, 143);
-    border-radius: 30%;
-    padding: 10px;
-  }
+#rules {
+  background-color: rgb(240, 186, 86);
+}
 
-  #displayScore {
-    text-align:center;
-    background-color:rgb(143, 188, 143);
-    padding: 20px;
-  }
-  
-  @keyframes slide {
-    0% {
-      background-position: 0 -1000px;
-    }
-    95% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 0 50px;
-    }
-  }
-  
-  #game-end,#char-setup {
-    display: none;
-  }
-  
-  .game-intro p {
-    font-size: 18px;
-    font-family: "Verdana";
-  }
-  
-  .logo-img {
-    width: 350px;
-  }
-  
-  body button {
-    font-size: 30px;
-    background-color: #870007;
-    color: #fff;
-    padding: 20px 40px;
-    border: 0;
-    box-shadow: 0;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
+#tutorial-overview {
+  display: flex;
+  margin: 20px;
+  padding: 20px;
+}
 
-  #broom {
-    width: 350px;
-    padding: 20px;
-    margin:20px;
-  }
-  
-  #navbar > ul > li {
-    list-style-type: none;
-    padding: 0 16px 0;
-  }
+#setupForm {
+  background-color: rgb(206, 151, 49);
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
 
-  #navbar > ul {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  #house-selection > div {
-    display: flex;
-    justify-content: center;
+#whole-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
+#input-areas {
+}
+
+#game-play {
+  display: none;
+  width: 100vw;
+  max-height: 100vw;
+  padding: 20px 0px;
+}
+
+#game-screen {
+  display: none;
+  align-content: center;
+  padding: 20px 0px;
+  overflow: hidden;
+  position: relative;
+  background-image: url("../module-1-game/assets/group1.svg");
+  background-size: cover;
+  animation: slide 5s linear infinite;
+}
+
+#houseLogo {
+  width: 100px;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+}
+
+#houseText {
+  width: 100px;
+  position: absolute;
+  top: 120px;
+  left: 20px;
+}
+
+#nickname {
+  width: 100px;
+  position: absolute;
+  top: 160px;
+  left: 20px;
+  font-family: fantasy;
+}
+
+#score-lives {
+  width: 100px;
+  position: absolute;
+  top: 30px;
+  left: 90%;
+  background-color: rgb(143, 188, 143);
+  border-radius: 30%;
+  padding: 10px;
+}
+
+#displayScore {
+  text-align: center;
+  padding: 20px;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 0 -1000px;
   }
+  95% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 50px;
+  }
+}
+
+#game-end,
+#char-setup {
+  display: none;
+}
+
+.game-intro p {
+  font-size: 18px;
+  font-family: "Verdana";
+}
+
+.logo-img {
+  width: 350px;
+}
+
+body button {
+  font-size: 30px;
+  background-color: #870007;
+  color: #fff;
+  padding: 20px 40px;
+  border: 0;
+  box-shadow: 0;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#broom {
+  width: 350px;
+  padding: 20px;
+  margin: 20px;
+}
+
+#navbar > ul > li {
+  list-style-type: none;
+  padding: 0 16px 0;
+}
+
+#navbar > ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+#house-selection > div {
+  display: flex;
+  justify-content: center;
+}

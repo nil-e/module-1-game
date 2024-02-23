@@ -2,7 +2,7 @@ class Obstacle extends Component {
   constructor(gameScreen) {
     super(
       gameScreen,
-      Math.floor(Math.random() * (window.screen.width-300) + 170),
+      Math.floor(Math.random() * (window.screen.width - 300) + 170),
       0,
       100,
       150,
@@ -20,7 +20,7 @@ class Gem extends Component {
   constructor(gameScreen) {
     super(
       gameScreen,
-      Math.floor(Math.random() * (window.screen.width-190) + 170),
+      Math.floor(Math.random() * (window.screen.width - 190) + 170),
       0,
       100,
       150,
@@ -38,34 +38,16 @@ class Snitch extends Component {
   constructor(gameScreen) {
     super(
       gameScreen,
-      Math.floor(Math.random() * (window.screen.width-250) + 170),
+      Math.floor(Math.random() * (window.screen.width - 250) + 180),
       0,
       100,
       150,
-      "./assets/snitch.svg"
+      "./assets/snitch.png"
     );
   }
 
   move() {
-    this.top += 3;
+    this.top += 12;
     this.updatePosition();
   }
 }
-
-// class Potion extends Component {
-//   constructor(gameScreen) {
-//     super(
-//       gameScreen,
-//       Math.floor(Math.random() * 300 + 70),
-//       0,
-//       100,
-//       150,
-//       "./assets/potion.svg"
-//     );
-//   }
-
-//   move() {
-//     this.top += 3;
-//     this.updatePosition();
-//   }
-// }

@@ -19,9 +19,31 @@
           />
         </div>
         <div>
-          <h1>Frequent Flyer</h1>
+          <div id="rules">
+            <h1>Frequent Flyer</h1>
+            <h2>How to play</h2>
+            <p>Use the arrow keys to control the broom!</p>
+            <div id="tutorial-overview">
+              <div class="tutorial-box">
+                <img
+                  class="tutorial"
+                  src="./assets/deathEater.png"
+                  alt="death eater"
+                />
+                <p>Death Eaters take away a life, make sure to avoid them.</p>
+              </div>
+
+              <div class="tutorial-box">
+                <img class="tutorial" src="./assets/gem.png" alt="gem" />
+                <p>Collect gems for a higher score. Each gem is 10 points.</p>
+              </div>
+              <div class="tutorial-box">
+                <img class="tutorial" src="./assets/snitch.png" alt="snitch" />
+                <p>Catch the snitch and get 200 points.</p>
+              </div>
+            </div>
+          </div>
           <button id="start-button">Start Game</button>
-          <p>Use the left and right arrow to control the broom!</p>
         </div>
       </div>
 
@@ -33,44 +55,61 @@
             <li><a href="" id="go-back">Go back</a></li>
           </ul>
         </nav>
-        <h1>Char Setup</h1>
-        <br />
-        <label for="username"><h2>What is your nickname?</h2></label>
-        <input type="text" name="username" id="username"/>
-        <div id="house-selection">
-          <h2>What house do you belong to?</h2>
-          <div class="house">
-            <input
-              type="radio"
-              id="gryffindor"
-              value="gryffindor"
-              name="house"
-              checked
-            />
-            <label for="gryffindor">Gryffindor</label>
+        <div id="setupForm">
+          <h1>Char Setup</h1>
+          <br />
+          <div id="whole-form">
+            <div id="input-areas">
+              <label for="username"><h2>What is your nickname?</h2></label>
+              <input type="text" name="username" id="username" />
+              <div id="house-selection">
+                <h2>What house do you belong to?</h2>
+                <div class="house">
+                  <input
+                    type="radio"
+                    id="gryffindor"
+                    value="gryffindor"
+                    name="house"
+                    checked
+                  />
+                  <label for="gryffindor">Gryffindor</label>
+                </div>
+                <div class="house">
+                  <input
+                    type="radio"
+                    id="ravenclaw"
+                    value="ravenclaw"
+                    name="house"
+                  />
+                  <label for="ravenclaw">Ravenclaw</label>
+                </div>
+                <div class="house">
+                  <input
+                    type="radio"
+                    id="hufflepuff"
+                    value="hufflepuff"
+                    name="house"
+                  />
+                  <label for="hufflepuff">Hufflepuff</label>
+                </div>
+                <div class="house">
+                  <input
+                    type="radio"
+                    id="slytherin"
+                    value="slytherin"
+                    name="house"
+                  />
+                  <label for="slytherin">Slytherin</label>
+                </div>
+              </div>
+            </div>
+
+            <div id="broom-selector">
+              <h2>Select Your Broom</h2>
+              <p>Click on broom to switch between brooms</p>
+              <img src="./assets/broom1.png" alt="broom" id="broom" />
+            </div>
           </div>
-          <div class="house">
-            <input type="radio" id="ravenclaw" value="ravenclaw" name="house" />
-            <label for="ravenclaw">Ravenclaw</label>
-          </div>
-          <div class="house">
-            <input
-              type="radio"
-              id="hufflepuff"
-              value="hufflepuff"
-              name="house"
-            />
-            <label for="hufflepuff">Hufflepuff</label>
-          </div>
-          <div class="house">
-            <input type="radio" id="slytherin" value="slytherin" name="house" />
-            <label for="slytherin">Slytherin</label>
-          </div>
-        </div>
-        <div id="broom-selector">
-          <h2>Select Your Broom</h2>
-          <p>Click on broom to switch between brooms</p>
-          <img src="./assets/broom1.png" alt="broom" id="broom" />
         </div>
         <button id="play-button" type="submit">Start Game</button>
       </div>
@@ -83,11 +122,9 @@
           <p>Lives: <span id="lives">3</span></p>
         </div>
         <!-- #game-screen is initially hidden using CSS style display: none -->
-        <div id="game-screen">
-          
-        </div>
+        <div id="game-screen"></div>
       </div>
-      
+
       <!-- #game-end is initially hidden using CSS style display: none -->
       <div id="game-end">
         <img
