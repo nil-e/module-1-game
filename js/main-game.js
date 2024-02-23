@@ -23,7 +23,7 @@ class Game {
     this.width = gameWidth;
     this.obstacles = [];
     this.Gems = [];
-    // this.Snitch = [];
+    this.Snitches = [];
     this.score = 0;
     this.lives = 3;
     this.gameIsOver = false;
@@ -83,13 +83,13 @@ class Game {
       clearInterval(this.gameIntervalId);
     }
   }
-  
+  //here i do obstacle
   update() {
     this.player.move();
     for (let i = 0; i < this.obstacles.length; i++) {
       const obstacle = this.obstacles[i];
       obstacle.move();
-//*here i do obstacles*/
+
       if (this.player.didCollide(obstacle)) {
         obstacle.element.remove();
         this.obstacles.splice(i, 1);
@@ -105,7 +105,7 @@ class Game {
       }
       console.log("update initiated");
     }
-//*here i do gems*/
+//here i do gems
     for (let i = 0; i < this.Gems.length; i++) {
       const Gem = this.Gems[i];
       Gem.move();
@@ -125,20 +125,24 @@ class Game {
       console.log("update initiated");
     }
 
-//*here i do snitch*/
-// if(this.Snitch.length === 0)
-// {
-//   new Snitch(this.gameScreen)
+//here i do snitch
+// for (let i = 0; i < this.Snitches.length; i++) {
+//   const Snitch = this.Snitches[i];
 //   Snitch.move();
 
 //   if (this.player.didCollide(Snitch)) {
 //     Snitch.element.remove();
+//     this.Gems.splice(i, 1);
 //     this.score += 200;
 //     document.getElementById("score").innerText = this.score.toString();
+//     i--;
 //   }
 //   else if (Snitch.top > this.height) {
 //     Snitch.element.remove();
+//     this.Gems.splice(i, 1);
+//     i--;
 //   }
+//   console.log("update initiated");
 // }
 
     if (this.lives === 0) {
@@ -150,6 +154,10 @@ class Game {
     if (Math.random() > 0.97 && this.Gems.length < 1) {
       this.Gems.push(new Gem(this.gameScreen));
     }
+
+    // if (Math.random() > 0.97 && this.Snitches.length < 1) {
+    //   this.Snitches.push(new Snitch(this.gameScreen));
+    // }
   }
 
   endGame() {

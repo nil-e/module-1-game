@@ -20,7 +20,7 @@ class Gem extends Component {
   constructor(gameScreen) {
     super(
       gameScreen,
-      Math.floor(Math.random() * (window.screen.width-290) + 170),
+      Math.floor(Math.random() * (window.screen.width-190) + 170),
       0,
       100,
       150,
@@ -38,7 +38,7 @@ class Snitch extends Component {
   constructor(gameScreen) {
     super(
       gameScreen,
-      Math.floor(Math.random() * 250 + 70),
+      Math.floor(Math.random() * (window.screen.width-250) + 170),
       0,
       100,
       150,

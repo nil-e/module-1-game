@@ -6,8 +6,8 @@ class Player extends Component {
     }
   
     move() {
-      this.left += this.directionX;
-      this.top += this.directionY;
+      this.left += this.directionX*5;
+      this.top += this.directionY*5;
   
       if (this.left < 10) {
         this.left = 10;
