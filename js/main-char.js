@@ -24,7 +24,6 @@ class Player extends Component {
       this.top = this.gameScreen.offsetHeight - this.height - 10;
     }
     this.updatePosition();
-    console.log("move initiated");
   }
 
   didCollide(obstacle) {
@@ -37,7 +36,6 @@ class Player extends Component {
       playerRect.top < obstacleRect.bottom &&
       playerRect.bottom > obstacleRect.top
     ) {
-      console.log("Crash!");
       return true;
     } else {
       return false;
@@ -54,7 +52,6 @@ class Player extends Component {
       playerRect.top < obstacleRect.bottom &&
       playerRect.bottom > obstacleRect.top
     ) {
-      console.log("You caught a diamond/snitch/potion!");
       return true;
     } else {
       return false;
@@ -79,7 +76,6 @@ class Player extends Component {
       newValue = brooms[i + 1];
     }
     charBroom.setAttribute("src", newValue);
-    console.log(newValue);
     let gameBroom = document.getElementById(currentBroom);
     gameBroom.setAttribute("src", newValue);
     gameBroom.setAttribute("id", newValue);

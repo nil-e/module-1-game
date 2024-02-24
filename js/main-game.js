@@ -79,7 +79,6 @@ class Game {
   }
 
   gameLoop() {
-    console.log("in the game loop");
     this.update();
     if (this.gameIsOver) {
       clearInterval(this.gameIntervalId);
@@ -103,7 +102,6 @@ class Game {
         this.obstacles.splice(i, 1);
         i--;
       }
-      console.log("update initiated");
     }
     //here i do gems
     for (let i = 0; i < this.Gems.length; i++) {
@@ -121,7 +119,6 @@ class Game {
         this.Gems.splice(i, 1);
         i--;
       }
-      console.log("update initiated");
     }
 
     //here i do snitch
@@ -140,7 +137,6 @@ class Game {
         this.Snitches.splice(i, 1);
         i--;
       }
-      console.log("snitch initiated");
     }
 
     if (this.lives === 0) {
